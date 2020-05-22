@@ -1,3 +1,30 @@
 <resources>
-    <string name="app_name">TP_weather</string>
+    <string name="app_name">My Plants</string>
+
+    <string name="TiTle">MY PLANTS</string>
+
+    <string name="m_pList">My Plants List</string>
+    <string name="m_shop">Shop</string>
+    <string name="m_reco">Recommend Plants</string>
+    <string name="m_sub">Main</string>
+    <string name="m_diary">Plants Diary</string>
+    <string name="m_set">Setting</string>
+    <string name="s_pro">My Profile</string>
+    <string name="s_alarm">Alarm</string>
+    <string name="s_info">App Info</string>
+    <string name="shop_pot">Flowerpot</string>
+    <string name="shop_flower">Flower</string>
+    <string name="shop_nutrient">Nutritional Supplement</string>
+    <string name="shop_soil">Soil</string>
+    <string name="shop_sprinkler">Sprinkler</string>
+    <string name="shop_acc">Accessories</string>
+    <string name="p_picBtn">Gallery Open</string>
+    <string name="p_myplantBtn">Set my Representative plants</string>
+    <string name="p_name">Name :</string>
+    <string name="p_email">Email :</string>
+    <string name="p_state">About Me :</string>
+    <string name="p_plant">Representative plants : </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

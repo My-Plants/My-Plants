@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/m_submain"
+        android:title="@string/m_sub"
+        app:showAsAction="never"/>
+    <item android:id="@+id/m_pList"
+        android:title="@string/m_pList"
+        app:showAsAction="never"/>
+    <item android:id="@+id/m_shop"
+        android:title="@string/m_shop"
+        app:showAsAction="never"/>
+    <item android:id="@+id/m_reco"
+        android:title="@string/m_reco"
+        app:showAsAction="never"/>
+    <item android:id="@+id/m_diary"
+        android:title="@string/m_diary"
+        app:showAsAction="never"/>
+    <item android:id="@+id/m_setting"
+        android:title="@string/m_set"
+        app:showAsAction="never"/>
+
+
+</menu>
