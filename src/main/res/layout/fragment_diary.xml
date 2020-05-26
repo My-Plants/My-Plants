@@ -2,7 +2,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-  >
+    android:background="@color/background"
+    >
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -11,17 +12,18 @@
         android:fillViewport="true"
         android:layout_marginTop="0dp"
         android:id="@+id/scrollView">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_horizontal"
-        android:gravity="center_horizontal"
-        android:orientation="vertical">
-        <DatePicker
-            android:id="@+id/datePicker"
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15sp" />
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -31,7 +33,7 @@
                     android:id="@+id/viewDatePick"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="#DDDDDD"
+
                     android:gravity="center"
                     android:text=""
                     android:textStyle="bold" />
@@ -39,34 +41,33 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
                     android:padding="5sp">
                     <EditText
                         android:id="@+id/edtDiary"
                         android:layout_width="350dp"
                         android:layout_height="80dp"
-                        android:background="#DDDDDD"
+                        android:background="@color/background"
                         android:ems="10"
                         android:gravity="start|center_vertical"
                         android:inputType="text|textMultiLine|textCapSentences"
                         android:padding="7sp"
+                        android:hint="@string/hint"
                         android:text="" />
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+
+                    <ImageButton
+                        android:id="@+id/btnGallery"
+                        android:layout_width="50dp"
+                        android:layout_height="72dp"
                         android:layout_gravity="fill_horizontal"
-                        android:gravity="center_horizontal"
-                        android:orientation="vertical">
-                        <Button
-                            android:id="@+id/btnGallery"
-                            android:layout_width="50dp"
-                            android:layout_height="40dp"
-                            android:text="Gallery" />
-                        <Button
-                            android:id="@+id/btnCamera"
-                            android:text="Camera"
-                            android:layout_width="50dp"
-                            android:layout_height="40dp" />
-                    </LinearLayout>
+                        android:background="@color/background"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/gallery"
+
+                        />
+
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -76,7 +77,8 @@
                         android:id="@+id/btnSave"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="새 일기 저장" />
+                        android:background="@color/background"
+                        android:text="@string/save_new" />
                 </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -90,9 +92,10 @@
                         android:gravity="center_horizontal"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:background="@color/background"
                         />
                 </LinearLayout>
             </LinearLayout>
-    </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 </RelativeLayout>
