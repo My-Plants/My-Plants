@@ -24,9 +24,16 @@
     <string name="p_email">Email :</string>
     <string name="p_state">About Me :</string>
     <string name="p_plant">Representative plants : </string>
+
+    <string name="p_edit">Edit Profile</string>
+    <string name="pe_edit">Profile Edit</string>
+    <string name="hint_name">enter your name</string>
+    <string name="hint_email">enter your email</string>
+    <string name="hint_state">enter your status message</string>
+    <string name="pe_set">Save</string>
+
     <string name="save_new">Save Diary</string>
     <string name="hint">Type a text </string>
-
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
