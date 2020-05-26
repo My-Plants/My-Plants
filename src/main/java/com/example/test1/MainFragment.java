@@ -23,6 +23,7 @@ public class MainFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_main,null);
 
+        //When the 'submain_btn'(ImageButton) pressed, replace fragment to SubmainFragment
         subFrag = new SubmainFragment();
         submain_btn = rootView.findViewById(R.id.subMain_btn);
         submain_btn.setOnClickListener(new View.OnClickListener() {

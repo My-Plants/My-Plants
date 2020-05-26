@@ -35,6 +35,7 @@ public class SubmainFragment extends Fragment {
         fmanager = getFragmentManager();
         ftrans = fmanager.beginTransaction();
 
+        //When each button is pressed, replace the fragment to each suitable fragment
         plist_btn = rootView.findViewById(R.id.pList_btn);
         plistFragment = new PlantslistFragment();
         plist_btn.setOnClickListener(new View.OnClickListener() {
@@ -68,7 +69,6 @@ public class SubmainFragment extends Fragment {
                 ftrans.replace(R.id.container, diaryFragment).commit();
             }
         });
-
         set_btn = rootView.findViewById(R.id.set_btn);
         setFragment = new SetFragment();
         set_btn.setOnClickListener(new View.OnClickListener() {
