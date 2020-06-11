@@ -24,8 +24,35 @@
     <string name="p_email">Email :</string>
     <string name="p_state">About Me :</string>
     <string name="p_plant">Representative plants : </string>
+
+    <string name="p_edit">Edit Profile</string>
+    <string name="pe_edit">Profile Edit</string>
+    <string name="hint_name">enter your name</string>
+    <string name="hint_email">enter your email</string>
+    <string name="hint_state">enter your status message</string>
+    <string name="pe_set">Save</string>
+
     <string name="save_new">Save Diary</string>
     <string name="hint">Type a text </string>
+
+
+    <string name="show_state"> About Me </string>
+    <string name="reco1">난이도 별 추천</string>
+    <string name="reco2">크기 별 추천</string>
+    <string name="reco3">공기 정화 식물 추천</string>
+
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Hard</string>
+    <string name="big">Large</string>
+    <string name="mid">Medium</string>
+    <string name="small">Small</string>
+    <string name="clean_plant">공기 정화 식물</string>
+
+    <string name = "pSearch_hint">Enter the plant name</string>
+
+
+    <string name="back_btn">Back</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>

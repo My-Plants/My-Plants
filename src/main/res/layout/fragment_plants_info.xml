@@ -5,14 +5,14 @@
     android:orientation="vertical"
     android:background="@color/background">
     <EditText
-        android:id="@+id/editSearch"
+        android:id="@+id/plantinfotext"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:hint="@string/pSearch_hint"
-        android:paddingLeft="4dp"/>
-    <ListView
-        android:id="@+id/plantListView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ListView>
+        android:layout_height="wrap_content"
+        android:hint="plant information fragment"/>
+    <Button
+        android:id="@+id/plantinfoback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="돌아가기"/>
+
 </LinearLayout>
