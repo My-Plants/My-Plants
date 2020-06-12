@@ -11,6 +11,9 @@
     <string name="m_set">Setting</string>
     <string name="s_pro">My Profile</string>
     <string name="s_alarm">Alarm</string>
+    <string name="set_noti">Receive Notification</string>
+    <string name="noti_off">Not Receive Notification</string>
+    <string name="noti_on">Receive Notification</string>
     <string name="s_info">App Info</string>
     <string name="shop_pot">Flowerpot</string>
     <string name="shop_flower">Flower</string>

@@ -29,7 +29,7 @@
             android:textColor="@color/text"
             android:textSize="20dp"
             />
-        <Button
+        <!--<Button
             android:id="@+id/set_alarm"
             android:layout_margin="10dp"
             android:layout_width="match_parent"
@@ -38,7 +38,7 @@
             android:text="@string/s_alarm"
             android:textColor="@color/text"
             android:textSize="20dp"
-            />
+            />-->
         <Button
             android:id="@+id/set_info"
             android:layout_margin="10dp"
@@ -48,6 +48,17 @@
             android:text="@string/s_info"
             android:textColor="@color/text"
             android:textSize="20dp"
+            />
+        <Switch
+            android:id="@+id/set_noti"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="@string/set_noti"
+            android:textOff="@string/noti_off"
+            android:textOn="@string/noti_on"
+            android:textColor="@color/text"
+            android:textSize="20dp"
+            android:layout_gravity="center"
             />
         <Button
             android:layout_width="wrap_content"

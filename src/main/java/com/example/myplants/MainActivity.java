@@ -5,12 +5,15 @@ import androidx.core.app.NotificationCompat;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.LinearLayout;
+import android.widget.Switch;
 import android.widget.TextView;
 
 
@@ -25,6 +28,7 @@ import jxl.Workbook;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity {
     PlantslistFragment plistFragment;
@@ -34,6 +38,8 @@ public class MainActivity extends AppCompatActivity {
     RecoFragment recoFragment;
     MainFragment mainFragment;
     SubmainFragment subFragment;
+    SharedPreferences preferences;
+    Switch sw;
 
     public ArrayList<String> plantList = new ArrayList<>();
     public static Context context_main;
@@ -61,12 +67,14 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        createNotification();
+        //createNotification();
         //Notification 앱 실행시 푸쉬알림
-        int state = 0;
-        if(state == 1){
-            createNotification();
-        }
+        String sfName = "Noti";
+        preferences = getSharedPreferences(sfName, MODE_PRIVATE);
+            String s = preferences.getString("Notification", "no value");
+            if(s.contains("Receive")) {
+                createNotification();
+            }
 
         try {
             InputStream is = getBaseContext().getResources().getAssets().open("myPlantsData.xls");
