@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PlantslistFragment"
+    android:orientation="vertical"
     android:background="@color/background">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <EditText
+        android:id="@+id/editSearch"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Plants List Fragment" />
-
+        android:layout_height="60dp"
+        android:hint="검색어를 입력하세요."
+        android:paddingLeft="4dp"/>
+    <ListView
+        android:id="@+id/plantListView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
 </LinearLayout>

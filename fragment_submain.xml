@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SubmainFragment"
+    android:background="@color/background">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="675dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <!--To show user's profile-->
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/pro_img"/>
+            <LinearLayout
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/show_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="20dp"
+                    android:text="@string/show_state"
+                    android:textStyle="bold"/>
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/show_state"
+                        android:textSize="17dp" />
+                </ScrollView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="26dp">
+
+                <Button
+                    android:id="@+id/pList_btn"
+                    android:layout_width="164dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/SetBtn_color"
+                    android:text="@string/m_pList"
+                    android:textColor="@color/text" />
+
+                <Button
+                    android:id="@+id/shop_btn"
+                    android:layout_width="164dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/SetBtn_color"
+                    android:text="@string/m_shop"
+                    android:textColor="@color/text" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingLeft="25dp">
+
+                <Button
+                    android:id="@+id/reco_btn"
+                    android:layout_width="164dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/SetBtn_color"
+                    android:text="@string/m_reco"
+                    android:textColor="@color/text" />
+
+                <Button
+                    android:id="@+id/diary_btn"
+                    android:layout_width="164dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/SetBtn_color"
+                    android:text="@string/m_diary"
+                    android:textColor="@color/text" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="330dp"
+                android:layout_height="98dp"
+                android:paddingLeft="25dp">
+
+                <Button
+                    android:id="@+id/set_btn"
+                    android:layout_width="164dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:background="@color/SetBtn_color"
+                    android:text="@string/m_set"
+                    android:textColor="@color/text" />
+
+                <ImageView
+                    android:layout_width="164dp"
+                    android:layout_height="80dp"
+                    android:layout_margin="10dp"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/plant" />
+            </TableRow>
+        </TableLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/app_name"
+            android:textColor="@color/text"
+            android:paddingTop="20dp"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+        <ImageView
+            android:layout_width="328dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:src="@drawable/seed" />
+
+
+    </LinearLayout>
+
+
+</FrameLayout>
