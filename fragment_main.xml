@@ -16,8 +16,11 @@
         android:textStyle="bold"
         android:textSize="50dp" />
 
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
+    <ImageButton
+        android:id="@+id/subMain_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/background"
+        android:scaleType="fitCenter"
         android:src="@drawable/plant" />
 </LinearLayout>

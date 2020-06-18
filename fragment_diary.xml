@@ -1,15 +1,101 @@
-<?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DiaryFragment"
-    android:background="@color/background">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    >
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Diary Fragment" />
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity ="center"
+        android:fillViewport="true"
+        android:layout_marginTop="0dp"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+            <DatePicker
+                android:id="@+id/datePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15sp"
+                />
 
-</FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/viewDatePick"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:gravity="center"
+                    android:text=""
+                    android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="center_horizontal"
+                    android:gravity="center_horizontal"
+                    android:padding="5sp">
+                    <EditText
+                        android:id="@+id/edtDiary"
+                        android:layout_width="350dp"
+                        android:layout_height="80dp"
+                        android:background="@color/background"
+                        android:ems="10"
+                        android:gravity="start|center_vertical"
+                        android:inputType="text|textMultiLine|textCapSentences"
+                        android:padding="7sp"
+                        android:hint="@string/hint"
+                        android:text="" />
+
+                    <ImageButton
+                        android:id="@+id/btnGallery"
+                        android:layout_width="50dp"
+                        android:layout_height="72dp"
+                        android:layout_gravity="fill_horizontal"
+                        android:background="@color/background"
+                        android:gravity="center"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/gallery"
+
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <Button
+                        android:id="@+id/btnSave"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background"
+                        android:text="@string/save_new" />
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:layout_gravity="fill_horizontal"
+                    android:gravity="center_horizontal">
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_gravity="fill_horizontal"
+                        android:gravity="center_horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/background"
+                        />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
