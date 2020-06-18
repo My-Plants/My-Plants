@@ -1,6 +1,5 @@
 package androidtown.org.myplants;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -27,6 +26,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.Calendar;
+
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
@@ -120,7 +120,6 @@ public class DiaryFragment extends Fragment {
             btnSave.setText("Save new diary");
             e.printStackTrace();
         }
-
     }
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

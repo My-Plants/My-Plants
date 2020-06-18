@@ -3,72 +3,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SetFragment"
-    android:background="@color/background"
-    android:id="@+id/fragment_container">
-    <LinearLayout
+    tools:context=".RecoFragment"
+    android:background="@color/background">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        >
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="90dp"
-            android:textStyle="bold"
-            android:textSize="45dp"
-            android:gravity="center"
-            android:text="@string/m_reco"
-            android:textColor="@color/text"/>
-        <Button
-            android:id="@+id/reco1"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/SetBtn_color"
-            android:text="@string/reco1"
-            android:textColor="@color/text"
-            android:textSize="20dp"
-            />
-        <Button
-            android:id="@+id/reco2"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/SetBtn_color"
-            android:text="@string/reco2"
-            android:textColor="@color/text"
-            android:textSize="20dp"
-            />
-        <Button
-            android:id="@+id/reco3"
-            android:layout_margin="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/SetBtn_color"
-            android:text="@string/reco3"
-            android:textColor="@color/text"
-            android:textSize="20dp"
-            />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/back_btn"
-            android:layout_gravity="center"
-            android:background="@color/SetBtn_color"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:id="@+id/backBtn"
-            android:layout_marginLeft="5dp"/>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:src="@drawable/seed"
-            />
-    </LinearLayout>
-    <!-- TODO: Update blank fragment layout -->
-
+        android:text="Recommend Fragment" />
 
 </FrameLayout>
