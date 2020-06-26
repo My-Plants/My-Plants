@@ -6,7 +6,7 @@
 
     <color name="background">#FFFAEBD7</color>
     <color name="text">#FF556B2F</color>
-
+    <color name="deleteText">#ff0000 </color>
     <color name="SetBtn_color">#FFD091</color>
 
 

@@ -18,12 +18,14 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
         // create SQL table with each columns
         String sql = "create table myPlantList (" +
                 "name text, " +
-                "size integer, " +
-                "level integer, " +
+                "size text, " +
+                "level text, " +
                 "feature text, " +
                 "watering text, " +
                 "nickname text, " +
-                "picture text);";
+                "date text, "+
+                "temperature text, "+
+                "caution text);";
         db.execSQL(sql);
     }
     @Override

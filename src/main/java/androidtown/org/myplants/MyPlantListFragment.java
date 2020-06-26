@@ -39,15 +39,15 @@ public class MyPlantListFragment extends Fragment {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_myplants,
                 container, false); //create a view for the fragment
 
-        helper = new MySQLiteOpenHelper((MainActivity) MainActivity.context_main, "person.db", null, 1);
+        helper = new MySQLiteOpenHelper((MainActivity) MainActivity.context_main, "person.db", null, 1); //create database
         db = helper.getReadableDatabase();
         Cursor c = db.query("myPlantList", null, null, null, null, null, null);
+       //put the cursor in the query
         int check = 0;
         while (c.moveToNext()) {
             String nickCheck = c.getString(c.getColumnIndex("nickname"));
             mItems.add(nickCheck);
         }
-
         listView = (ListView)rootView.findViewById(R.id.myPlantListView);
         arrayAdapter = new ArrayAdapter<String>(getContext(), android.R.layout.simple_list_item_1, mItems);
 
@@ -59,23 +59,22 @@ public class MyPlantListFragment extends Fragment {
 
         plistFragment = new PlantslistFragment();
         myPlantInfoFrag = new MyPlantsInfoFragment();
-
+        //If listView item clicked
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView,
                                     View view, int position, long id) {
 
-                String selected_item = mItems.get(position);
+                String selected_item = mItems.get(position); //Get the position of the selected_item
                 bundle = new Bundle();
-                bundle.putString("nickname", selected_item);
+                bundle.putString("nickname", selected_item); //put selected item with the name "nickname"
                 myPlantInfoFrag.setArguments(bundle);
 
-                ftrans.replace(R.id.container, myPlantInfoFrag).commit();
+                ftrans.replace(R.id.container, myPlantInfoFrag).commit(); //Replace fragment with my plant info fragment
             }
         });
 
-
-       
+        //If pressing plus button replace fragment with plistFragement
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

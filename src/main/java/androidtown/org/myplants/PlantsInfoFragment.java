@@ -3,6 +3,7 @@ package androidtown.org.myplants;
 
 
 import android.content.ContentValues;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
@@ -29,10 +30,11 @@ import java.io.BufferedInputStream;
 import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
+import java.util.Calendar;
 
 public class PlantsInfoFragment extends Fragment {
     PlantslistFragment plistFragment;
-    SaveExcel exl;
+
     MyPlantListFragment myPlantListFragment;
 
     FragmentManager fmanager;
@@ -44,10 +46,13 @@ public class PlantsInfoFragment extends Fragment {
 
     String name_t;
     String picture_t;
-    int size_t;
-    int level_t;
+    String size_t;
+    String level_t;
+    String date_t="";
     String feature_t;
     String watering_t;
+    String caution_t="";
+    String temperature_t="";
 
     TextView name;
     TextView size;
@@ -63,11 +68,13 @@ public class PlantsInfoFragment extends Fragment {
     //돌아가기 버튼
     Button plist_btn;
 
+    SharedPreferences mPref;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_plantsinfo,
                 container, false); //create a view for the fragment
-        EditText eNickname=(EditText) rootView.findViewById(R.id.nickname);
+        eNickname=(EditText) rootView.findViewById(R.id.nickname);
         name=(TextView) rootView.findViewById(R.id.plant_name);
         size=(TextView) rootView.findViewById(R.id.plant_size);
         level=(TextView) rootView.findViewById(R.id.plant_level);
@@ -101,9 +108,11 @@ public class PlantsInfoFragment extends Fragment {
                     name_t = sheet.getCell(0, row).getContents();
                     picture_t = sheet.getCell(1, row).getContents();
                     watering_t = sheet.getCell(2, row).getContents();
-                    size_t = Integer.parseInt(sheet.getCell(4, row).getContents());
+                    temperature_t=sheet.getCell(3,row).getContents();
+                    size_t = sheet.getCell(4, row).getContents();
                     feature_t = sheet.getCell(6, row).getContents();
-                    level_t = Integer.parseInt(sheet.getCell(8, row).getContents());
+                    caution_t = sheet.getCell(7, row).getContents();
+                    level_t = sheet.getCell(8, row).getContents();
                 }
             }
         }
@@ -122,9 +131,16 @@ public class PlantsInfoFragment extends Fragment {
         } catch (Exception e) {
         }
 
+        Calendar c = Calendar.getInstance();
+        int cYear = c.get(Calendar.YEAR);
+        int cMonth = c.get(Calendar.MONTH)+1; //since it starts with 0,  add 1
+        int cDay = c.get(Calendar.DAY_OF_MONTH);
+
+        date_t=""+cYear + cMonth + cDay;
+
         name.setText(name_t);
-        size.setText(Integer.toString(size_t));
-        level.setText(Integer.toString(level_t));
+        size.setText(size_t);
+        level.setText(level_t);
         feature.setText(feature_t);
         watering.setText(watering_t);
 
@@ -133,21 +149,21 @@ public class PlantsInfoFragment extends Fragment {
 
         plus.setOnClickListener(v -> {
             String nickname = eNickname.getText().toString();
-            insert(name_t, size_t, level_t, feature_t, watering_t, nickname, picture_t);
+            insert(name_t, size_t, level_t, feature_t, watering_t, nickname, date_t,caution_t,temperature_t);
             select();
             ftrans.replace(R.id.container, myPlantListFragment).commit();
         });
 
         //돌아가기 버튼
-        plist_btn = rootView.findViewById(R.id.plantinfoback);
+        plist_btn = rootView.findViewById(R.id.backBtn);
         plist_btn.setOnClickListener(v -> ftrans.replace(R.id.container, plistFragment).commit());
 
         return rootView;
     }
 
     // insert function
-    public void insert(String name, int size, int level, String feature,
-                       String watering, String nickname, String picture) {
+    public void insert(String name, String size, String level, String feature,
+                       String watering, String nickname, String date,String caution, String temperature) {
         db = helper.getWritableDatabase();
         // create value set
         Cursor c = db.query("myPlantList", null, null, null, null, null, null);
@@ -168,7 +184,11 @@ public class PlantsInfoFragment extends Fragment {
             values.put("feature", feature);
             values.put("watering", watering);
             values.put("nickname", nickname);
-            values.put("picture", picture);
+            values.put("date",date);
+            values.put("caution",caution);
+            values.put("temperature",temperature);
+
+
             // insert value into db
             db.insert("myPlantList", null, values);
             Toast.makeText(getActivity(),"저장되었습니다",Toast.LENGTH_SHORT).show();
@@ -194,17 +214,18 @@ public class PlantsInfoFragment extends Fragment {
         while (c.moveToNext()) {
             // get data from db
             String name = c.getString(c.getColumnIndex("name"));
-            int size = c.getInt(c.getColumnIndex("size"));
-            int level = c.getInt(c.getColumnIndex("level"));
+            String size = c.getString(c.getColumnIndex("size"));
+            String level = c.getString(c.getColumnIndex("level"));
             String feature = c.getString(c.getColumnIndex("feature"));
             String watering = c.getString(c.getColumnIndex("watering"));
             String nickname = c.getString(c.getColumnIndex("nickname"));
-            String picture = c.getString(c.getColumnIndex("picture"));
+            String date=c.getString(c.getColumnIndex("date"));
+            String temperature=c.getString(c.getColumnIndex("temperature"));
+            String caution=c.getString(c.getColumnIndex("caution"));
 
             Log.i("db1", name + " " + size + " " + level +" " + feature + " "
-                    + watering + " " + nickname + " " + picture);
+                    + watering + " " + nickname + " "+date+" "+caution+" "+temperature);
             // move to next data
         }
     }
-
 }

@@ -24,7 +24,7 @@
             android:layout_margin="8dp"
             android:paddingLeft="25dp"
             android:paddingTop="5dp"
-            android:text="Plant name: "
+            android:text="@string/plant_name"
             android:textStyle="bold"
             android:textColor="@color/text"
             android:textSize="20dp" />
@@ -49,7 +49,7 @@
             android:layout_margin="8dp"
             android:paddingLeft="25dp"
             android:paddingTop="5dp"
-            android:text="Plant Size: "
+            android:text="@string/plant_size"
             android:textStyle="bold"
             android:textColor="@color/text"
             android:textSize="20dp" />
@@ -74,7 +74,7 @@
             android:layout_margin="8dp"
             android:paddingLeft="25dp"
             android:paddingTop="5dp"
-            android:text="Plant Level: "
+            android:text="@string/plant_level"
             android:textStyle="bold"
             android:textColor="@color/text"
             android:textSize="20dp" />
@@ -98,7 +98,7 @@
             android:layout_margin="8dp"
             android:paddingLeft="25dp"
             android:paddingTop="5dp"
-            android:text="Plant Feature: "
+            android:text="@string/plant_feature"
             android:textStyle="bold"
             android:textColor="@color/text"
             android:textSize="20dp" />
@@ -123,7 +123,7 @@
             android:layout_margin="8dp"
             android:paddingLeft="25dp"
             android:paddingTop="5dp"
-            android:text="Plant Watering: "
+            android:text="@string/plant_watering"
             android:textStyle="bold"
             android:textColor="@color/text"
             android:textSize="20dp" />
@@ -148,7 +148,7 @@
             android:layout_margin="8dp"
             android:paddingLeft="25dp"
             android:paddingTop="5dp"
-            android:text="Plant Nickname: "
+            android:text="@string/plant_nickname"
             android:textStyle="bold"
             android:textColor="@color/text"
             android:textSize="20dp" />
@@ -159,6 +159,7 @@
             android:layout_marginTop="8dp"
             android:paddingTop="5dp"
             android:textStyle="bold"
+            android:hint="@string/hintt"
             android:textColor="@color/text"
             android:textSize="18dp"/>
     </LinearLayout>
@@ -172,9 +173,17 @@
         android:scaleType="fitCenter"
         />
     <Button
-        android:id="@+id/plantinfoback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="돌아가기"/>
+        android:text="@string/back_btn"
+        android:layout_gravity="center"
+        android:background="@color/SetBtn_color"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:id="@+id/backBtn"
+        android:layout_marginLeft="5dp"/>
 
 </LinearLayout>

@@ -2,7 +2,6 @@
     <string name="app_name">My Plants</string>
 
     <string name="TiTle">MY PLANTS</string>
-
     <string name="m_pList">My Plants List</string>
     <string name="m_shop">Shop</string>
     <string name="m_reco">Recommend Plants</string>
@@ -37,6 +36,36 @@
 
 
     <string name="show_state"> About Me </string>
+    <string name="reco1">난이도 별 추천</string>
+    <string name="reco2">크기 별 추천</string>
+    <string name="reco3">공기 정화 식물 추천</string>
+
+    <string name="easy">Easy</string>
+    <string name="normal">Normal</string>
+    <string name="hard">Hard</string>
+    <string name="big">Large</string>
+    <string name="mid">Medium</string>
+    <string name="small">Small</string>
+    <string name="clean_plant">공기 정화 식물</string>
+
+    <string name = "pSearch_hint">Enter the plant name</string>
+
+
+    <string name="back_btn">Back</string>
+    <string name="delete_btn">Delete</string>
+
+    <string name="plant_name">Plant Name: </string>
+    <string name="plant_size">Plant Size: </string>
+    <string name="plant_level">Plant Level: </string>
+    <string name="plant_feature">Plant Feature: </string>
+    <string name="plant_watering">Plant Watering: </string>
+    <string name="plant_nickname">Plant Nickname: </string>
+    <string name="hintt">Enter nickname</string>
+    <string name="search">Enter plants name</string>
+    <string name="temperature">Optimal Temperature: </string>
+    <string name="plant_caution">Precaution: </string>
+    <string name="plant_date">Saved Date: </string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -10,7 +10,7 @@ class Item {
     private String mPhoto;
 
 
-    Item(String name, int size, int level, String feature, String watering, String nickname, String photo ){
+    Item(String name, int size, int level, String feature, String watering, String nickname,String photo ){
         mName = name;
         msize=size;
         mfeature=feature;

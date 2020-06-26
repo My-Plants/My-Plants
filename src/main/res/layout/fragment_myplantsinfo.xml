@@ -4,193 +4,296 @@
     android:layout_height="match_parent"
     android:padding="10dp"
     android:background="@color/background">
-
-    <ImageView
-        android:layout_margin="10dp"
-        android:id="@+id/myplant_photo"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_gravity="center"
-        android:background="@color/background"
-        android:scaleType="fitCenter" />
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical"
+        android:gravity ="center"
+        android:fillViewport="true"
+        android:layout_marginTop="0dp"
+        android:id="@+id/scrollView">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_margin="10dp"
+                android:id="@+id/my_photo"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:background="@color/background"
+                android:scaleType="fitCenter" />
+            <ImageButton
+                android:id="@+id/btnGallery2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@color/background"
+                android:scaleType="fitCenter"
+                android:src="@drawable/gallery"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Plant name: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_name"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Plant Size: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_size"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Plant Level: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_level"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Plant Feature: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_feature"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_nickname"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_nickname"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Plant Watering: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_watering"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Plant Nickname: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_nickname"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_name"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_name"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:paddingLeft="25dp"
-            android:paddingTop="5dp"
-            android:text="Registration date: "
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="20dp" />
-        <TextView
-            android:id="@+id/myplant_date"
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_marginTop="8dp"
-            android:paddingTop="5dp"
-            android:textStyle="bold"
-            android:textColor="@color/text"
-            android:textSize="18dp"/>
-    </LinearLayout>
-    <Button
-        android:id="@+id/myplantinfoback"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="돌아가기"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_size"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_size"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_level"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_level"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_feature"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_feature"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_watering"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_watering"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/temperature"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_temperature"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_caution"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_caution"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:paddingLeft="25dp"
+                    android:paddingTop="5dp"
+                    android:text="@string/plant_date"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="20dp" />
+                <TextView
+                    android:id="@+id/myplant_date"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:paddingTop="5dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/text"
+                    android:textSize="18dp"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                >
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/back_btn"
+                    android:layout_gravity="center"
+                    android:background="@color/SetBtn_color"
+                    android:textColor="@color/text"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/backBtn"
+                    android:layout_marginLeft="100dp"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/delete_btn"
+                    android:layout_gravity="center"
+                    android:background="@color/SetBtn_color"
+                    android:textColor="@color/deleteText"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:id="@+id/deleteBtn"
+                    android:layout_marginLeft="20dp"/>
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

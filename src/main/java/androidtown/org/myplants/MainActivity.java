@@ -1,20 +1,19 @@
 package androidtown.org.myplants;
+import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.content.Context;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.ArrayList;
 
 import jxl.Sheet;
 import jxl.Workbook;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     PlantslistFragment plistFragment;
@@ -27,7 +26,6 @@ public class MainActivity extends AppCompatActivity {
     SubmainFragment subFragment;
     Sheet sheet;
     public ArrayList<String> plantList = new ArrayList<>();
-    public File directory;
     public static Context context_main;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +67,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-       directory = getExternalFilesDir(null);
-        Log.i("test", directory.toString());
+
 
         context_main = this;
 

@@ -1,5 +1,6 @@
 package androidtown.org.myplants;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -26,7 +27,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.util.Calendar;
-
 import static android.app.Activity.RESULT_OK;
 import static android.content.Context.MODE_PRIVATE;
 
@@ -75,16 +75,15 @@ public class DiaryFragment extends Fragment {
         });
         //When clicking the gallery icon, open gallery, select photo and save the image in imageview
         ImageButton button = rootView.findViewById(R.id.btnGallery);
-        button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() { //When clicking the gallery button
             @Override
-            public void onClick(View view) {
+            public void onClick(View view) { //Set the intent type as image and start intent
                 Intent intent = new Intent();
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent, 1);
             }
         });
-
         return rootView;
     }
 
