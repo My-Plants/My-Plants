@@ -2,6 +2,7 @@
     <string name="app_name">My Plants</string>
 
     <string name="TiTle">MY PLANTS</string>
+
     <string name="m_pList">My Plants List</string>
     <string name="m_shop">Shop</string>
     <string name="m_reco">Recommend Plants</string>
@@ -10,6 +11,9 @@
     <string name="m_set">Setting</string>
     <string name="s_pro">My Profile</string>
     <string name="s_alarm">Alarm</string>
+    <string name="set_noti">Receive Notification</string>
+    <string name="noti_off">Not Receive Notification</string>
+    <string name="noti_on">Receive Notification</string>
     <string name="s_info">App Info</string>
     <string name="shop_pot">Flowerpot</string>
     <string name="shop_flower">Flower</string>
@@ -18,11 +22,11 @@
     <string name="shop_sprinkler">Sprinkler</string>
     <string name="shop_acc">Accessories</string>
     <string name="p_picBtn">Gallery Open</string>
-    <string name="p_myplantBtn">Set my Representative plants</string>
+    <string name="p_myplantBtn">Show my plants</string>
     <string name="p_name">Name :</string>
     <string name="p_email">Email :</string>
     <string name="p_state">About Me :</string>
-    <string name="p_plant">Representative plants : </string>
+    <string name="p_plant">My plants : </string>
 
     <string name="p_edit">Edit Profile</string>
     <string name="pe_edit">Profile Edit</string>
@@ -50,9 +54,13 @@
 
     <string name = "pSearch_hint">Enter the plant name</string>
 
-
-    <string name="back_btn">Back</string>
-    <string name="delete_btn">Delete</string>
+    <string name="i_name">● App name : </string>
+    <string name="i_ver">● App version : </string>
+    <string name="ver">version 1.0</string>
+    <string name="i_dev">● Developers : </string>
+    <string name="developer">KimKY, KimHK, KimJH, LeeSR</string>
+    <string name="i_mod">● Modified Date : </string>
+    <string name="modify">2020.06</string>
 
     <string name="plant_name">Plant Name: </string>
     <string name="plant_size">Plant Size: </string>
@@ -65,7 +73,9 @@
     <string name="temperature">Optimal Temperature: </string>
     <string name="plant_caution">Precaution: </string>
     <string name="plant_date">Saved Date: </string>
+    <string name="back_btn">Back</string>
 
+    <string name="delete_btn">Delete</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

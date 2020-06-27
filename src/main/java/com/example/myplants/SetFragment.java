@@ -21,18 +21,18 @@ import android.widget.Toast;
 
 public class SetFragment extends Fragment {
 
-   Button pro_btn;
-   Button info_btn;
-   Button back_btn;
-   Switch sw;
-   ProfileFragment proFrag ;
-   InfoFragment infoFrag;
-   SubmainFragment mainFrag;
-   FragmentManager fmanager;
-   FragmentTransaction ftrans;
-   private Context context;
-   private SharedPreferences preferences;
-   private SharedPreferences.Editor editor;
+    Button pro_btn;
+    Button info_btn;
+    Button back_btn;
+    Switch sw;
+    ProfileFragment proFrag ;
+    InfoFragment infoFrag;
+    SubmainFragment mainFrag;
+    FragmentManager fmanager;
+    FragmentTransaction ftrans;
+    private Context context;
+    private SharedPreferences preferences;
+    private SharedPreferences.Editor editor;
 
     public SetFragment() {
 

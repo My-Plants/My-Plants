@@ -33,10 +33,12 @@ public class ProfileFragment extends Fragment {
     SharedPreferences mPref;
     Button edit_btn;
     Button back_btn;
+    Button show_btn;
 
     FragmentManager fmanager;
     FragmentTransaction ftrans;
     EditproFragment editproFragment;
+    MyPlantListFragment myPlantListFragment;
     SetFragment setFrag;
 
     String pro_name;  // user's name
@@ -86,6 +88,15 @@ public class ProfileFragment extends Fragment {
                 intent.setType("image/*");
                 intent.setAction(Intent.ACTION_GET_CONTENT);
                 startActivityForResult(intent, 1);
+            }
+        });
+
+        myPlantListFragment = new MyPlantListFragment();
+        show_btn = rootView.findViewById(R.id.show_btn);
+        show_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ftrans.replace(R.id.container,myPlantListFragment).commit();
             }
         });
 

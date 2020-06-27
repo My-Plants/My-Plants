@@ -4,6 +4,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background">
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/back_btn"
+        android:textColor="@color/text"
+        android:background="@color/SetBtn_color"
+        android:textStyle="bold"
+        android:id="@+id/backBtn"/>
     <EditText
         android:id="@+id/editSearch"
         android:layout_width="match_parent"

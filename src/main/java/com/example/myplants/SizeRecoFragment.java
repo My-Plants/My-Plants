@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 
@@ -44,6 +45,9 @@ public class SizeRecoFragment extends Fragment {
     private List<String> list1;
     private List<String> list2;
     private List<String> list3;
+
+    private Bundle bundle;
+    PlantsInfoFragment pinfoFragment;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -112,6 +116,7 @@ public class SizeRecoFragment extends Fragment {
                     continue;
                 String p_name = sheet.getCell(0,i).getContents();
                 String p_level = sheet.getCell(4,i).getContents();
+
                 if(p_level.equals("1")){
                     smallList.add(p_name);
                     Log.i("levle1", "size1 : "+p_name);
@@ -133,6 +138,47 @@ public class SizeRecoFragment extends Fragment {
             list3.addAll(bigList);
             adapter3 = new SearchAdapter(list3, MainActivity.context_main);
             listView_S3.setAdapter(adapter3);
+
+            pinfoFragment = new PlantsInfoFragment();
+            listView_S1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView,
+                                        View view, int position, long id) {
+
+                    String selected_item = smallList.get(position);
+                    bundle = new Bundle();
+                    bundle.putString("selecPlant", selected_item);
+                    pinfoFragment.setArguments(bundle);
+
+                    ftrans.replace(R.id.container, pinfoFragment).commit();
+                }
+            });
+            listView_S2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView,
+                                        View view, int position, long id) {
+
+                    String selected_item = midList.get(position);
+                    bundle = new Bundle();
+                    bundle.putString("selecPlant", selected_item);
+                    pinfoFragment.setArguments(bundle);
+
+                    ftrans.replace(R.id.container, pinfoFragment).commit();
+                }
+            });
+            listView_S3.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> adapterView,
+                                        View view, int position, long id) {
+
+                    String selected_item = bigList.get(position);
+                    bundle = new Bundle();
+                    bundle.putString("selecPlant", selected_item);
+                    pinfoFragment.setArguments(bundle);
+
+                    ftrans.replace(R.id.container, pinfoFragment).commit();
+                }
+            });
         }
         return rootView;
     }

@@ -95,9 +95,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="horizontal">
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/pro_plant"
                 android:text="@string/p_plant"
@@ -111,7 +111,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/prop_btn"
+                android:id="@+id/show_btn"
                 android:text="@string/p_myplantBtn"
                 android:layout_gravity="center"
                 android:background="@color/SetBtn_color"
@@ -145,18 +145,38 @@
                 android:textSize="20dp" />
 
         </LinearLayout>
-        <Button
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/p_edit"
-            android:layout_gravity="center"
-            android:background="@color/SetBtn_color"
-            android:textColor="@color/text"
-            android:textStyle="bold"
-            android:layout_marginTop="10dp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:id="@+id/edit_pro"/>
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/p_edit"
+                android:layout_gravity="center"
+                android:background="@color/SetBtn_color"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/edit_pro"
+                android:layout_marginRight="5dp"/>
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/back_btn"
+                android:layout_gravity="center"
+                android:background="@color/SetBtn_color"
+                android:textColor="@color/text"
+                android:textStyle="bold"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:id="@+id/backBtn"
+                android:layout_marginLeft="5dp"/>
+        </LinearLayout>
 
         <ImageView
             android:layout_width="match_parent"

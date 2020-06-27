@@ -20,7 +20,6 @@ import android.widget.TextView;
 
 
 public class SubmainFragment extends Fragment {
-    PlantslistFragment plistFragment;
     ShopFragment shopFragment;
     DiaryFragment diaryFragment;
     SetFragment setFragment;
@@ -42,6 +41,8 @@ public class SubmainFragment extends Fragment {
     TextView txtName;
     TextView txtState;
 
+    MyPlantListFragment myPlantListFragment;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -51,6 +52,8 @@ public class SubmainFragment extends Fragment {
         ftrans = fmanager.beginTransaction();
 
         mPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
+
+
 
         txtName = rootView.findViewById(R.id.show_name);
         txtState = rootView.findViewById(R.id.show_state);
@@ -67,16 +70,13 @@ public class SubmainFragment extends Fragment {
         }
 
 
-
-
-
         //When each button is pressed, replace the fragment to each suitable fragment
         plist_btn = rootView.findViewById(R.id.pList_btn);
-        plistFragment = new PlantslistFragment();
+        myPlantListFragment = new MyPlantListFragment();
         plist_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ftrans.replace(R.id.container, plistFragment).commit();
+                ftrans.replace(R.id.container, myPlantListFragment).commit();
             }
         });
 
@@ -115,6 +115,7 @@ public class SubmainFragment extends Fragment {
         // Inflate the layout for this fragment
         return  rootView;
     }
+
 
     public Bitmap StringToBitMap(String encodedString) {
         try {
