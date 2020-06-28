@@ -1,5 +1,6 @@
 # My-Plants
 ● Set your app/build.gradle(*)
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.1.0'
