@@ -9,10 +9,10 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation files('libs\\jxl.jar')
-    implementation files('libs\\jsoup-1.13.1.jar')
-    implementation 'com.github.bumptech.glide:glide:4.11.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    *implementation files('libs\\jxl.jar')
+    *implementation files('libs\\jsoup-1.13.1.jar')
+    *implementation 'com.github.bumptech.glide:glide:4.11.0'
+    *annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
 }
 
 
