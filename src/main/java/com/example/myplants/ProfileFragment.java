@@ -71,7 +71,6 @@ public class ProfileFragment extends Fragment {
         txtState.setText(pro_state);
 
         //if there is saved profile image in SharedPreferences, set the profile image by the saved image
-
         String i_image = mPref.getString("prof_img", null);
         if (i_image != null) {
             imageView = rootView.findViewById(R.id.image);
@@ -91,6 +90,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        //When 'show_button' clicked, show user's plants list
         myPlantListFragment = new MyPlantListFragment();
         show_btn = rootView.findViewById(R.id.show_btn);
         show_btn.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +110,7 @@ public class ProfileFragment extends Fragment {
             }
         });
 
+        //back button
         back_btn = rootView.findViewById(R.id.backBtn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override

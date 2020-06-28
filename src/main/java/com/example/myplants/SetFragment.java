@@ -76,7 +76,8 @@ public class SetFragment extends Fragment {
             }
         });
         sw = (Switch) rootView.findViewById(R.id.set_noti);
-        sw.toggle(); //Switch의 현재 설정된 상태 반대 옵션으로 변경해줌(OFF->ON)
+
+        sw.toggle(); //Change switch's option(ON->OFF / OFF->ON)
         String sfName = "Noti";
         preferences = context.getSharedPreferences(sfName, Context.MODE_PRIVATE);
         String s = preferences.getString("Notification", "no value");
@@ -94,6 +95,7 @@ public class SetFragment extends Fragment {
         // Inflate the layout for this fragment
         return  rootView;
     }
+    //Change notification receive state when switch clicked
     public void CheckState(){
         if(sw.isChecked()){
             Toast.makeText(context, "Receive Notification", Toast.LENGTH_LONG).show();

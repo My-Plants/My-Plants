@@ -21,9 +21,10 @@ public class InfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_info,
                 container, false);
-        // Inflate the layout for this fragment
+
         fmanager = getFragmentManager();
         ftrans = fmanager.beginTransaction();
+        //Back button
         back_btn = rootView.findViewById(R.id.backBtn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
