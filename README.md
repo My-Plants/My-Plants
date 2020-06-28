@@ -2,6 +2,7 @@
 ● Set your app/build.gradle(*)
 
 dependencies {
+
  ...
  
     *implementation files('libs\\jxl.jar')
