@@ -95,9 +95,9 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="vertical">
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/pro_plant"
                 android:text="@string/p_plant"
@@ -111,7 +111,7 @@
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/show_btn"
+                android:id="@+id/prop_btn"
                 android:text="@string/p_myplantBtn"
                 android:layout_gravity="center"
                 android:background="@color/SetBtn_color"

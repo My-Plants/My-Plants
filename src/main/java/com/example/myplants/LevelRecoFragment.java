@@ -59,7 +59,7 @@ public class LevelRecoFragment extends Fragment {
         list1 = new ArrayList<String>();
         list2 = new ArrayList<String>();
         list3 = new ArrayList<String>();
-        //when button 'level1' is pressed, show easy level plants
+        //when button 'level1' is pressed, show eas
         level1 = rootView.findViewById(R.id.easy);
         level1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -71,7 +71,6 @@ public class LevelRecoFragment extends Fragment {
                 }
             }
         });
-        //when button 'level2' is pressed, show normal level plants
         level2 = rootView.findViewById(R.id.normal);
         level2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -83,7 +82,6 @@ public class LevelRecoFragment extends Fragment {
                 }
             }
         });
-        //when button 'level3' is pressed, show hard level plants
         level3 = rootView.findViewById(R.id.hard);
         level3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -99,14 +97,14 @@ public class LevelRecoFragment extends Fragment {
         ftrans = fmanager.beginTransaction();
         back_btn = rootView.findViewById(R.id.backBtn);
         recoFrag = new RecoFragment();
-        //Back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, recoFrag).commit();
             }
         });
-        //Read all data from sheet, find each level plants and store them to each list
+
+
         if (sheet != null) {
             int colTotal = sheet.getColumns();    // 전체 컬럼
             int rowIndexStart = 1;                  // row 인덱스 시작
@@ -127,11 +125,8 @@ public class LevelRecoFragment extends Fragment {
                     Log.i("levle3", "Level3 : "+p_name);
                 }
             }
-            //check
-            //Log.i("levle1", level1List.toString());
+            Log.i("levle1", level1List.toString());
 
-            //add each level list to each list array
-            //create adapters and set them to listView
             list1.addAll(level1List);
             adapter1 = new SearchAdapter(list1, MainActivity.context_main);
             listView_L1.setAdapter(adapter1);
@@ -143,7 +138,6 @@ public class LevelRecoFragment extends Fragment {
             listView_L3.setAdapter(adapter3);
 
             pinfoFragment = new PlantsInfoFragment();
-            //if each item clicked, move page to the item(plant)'s information page
             listView_L1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView,

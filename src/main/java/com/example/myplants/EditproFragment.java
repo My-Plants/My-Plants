@@ -53,6 +53,12 @@ public class EditproFragment extends Fragment {
                 String email = e_email.getText().toString();
                 String state = e_state.getText().toString();
 
+                /*Bundle bundle = new Bundle();
+                bundle.putString("p_name",name);
+                bundle.putString("p_email",email);
+                bundle.putString("p_state",state);
+
+                proFragment.setArguments(bundle);*/
                 SharedPreferences.Editor editor = mPref.edit();
                 editor.putString("prof_name", name);
                 editor.putString("prof_email",email);

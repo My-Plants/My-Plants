@@ -33,12 +33,10 @@ public class ProfileFragment extends Fragment {
     SharedPreferences mPref;
     Button edit_btn;
     Button back_btn;
-    Button show_btn;
 
     FragmentManager fmanager;
     FragmentTransaction ftrans;
     EditproFragment editproFragment;
-    MyPlantListFragment myPlantListFragment;
     SetFragment setFrag;
 
     String pro_name;  // user's name
@@ -71,6 +69,7 @@ public class ProfileFragment extends Fragment {
         txtState.setText(pro_state);
 
         //if there is saved profile image in SharedPreferences, set the profile image by the saved image
+
         String i_image = mPref.getString("prof_img", null);
         if (i_image != null) {
             imageView = rootView.findViewById(R.id.image);
@@ -90,16 +89,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        //When 'show_button' clicked, show user's plants list
-        myPlantListFragment = new MyPlantListFragment();
-        show_btn = rootView.findViewById(R.id.show_btn);
-        show_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ftrans.replace(R.id.container,myPlantListFragment).commit();
-            }
-        });
-
         //When the'edit_btn' pressed, replace fragment to EditprofileFragment
         edit_btn = rootView.findViewById(R.id.edit_pro);
         edit_btn.setOnClickListener(new View.OnClickListener() {
@@ -110,7 +99,6 @@ public class ProfileFragment extends Fragment {
             }
         });
 
-        //back button
         back_btn = rootView.findViewById(R.id.backBtn);
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
