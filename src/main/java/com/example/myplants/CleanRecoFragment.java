@@ -39,15 +39,16 @@ public class CleanRecoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         ViewGroup rootView = (ViewGroup) inflater.inflate(R.layout.fragment_clean_reco, null);
+        //get data sheet from main activity
         sheet = ((MainActivity) MainActivity.context_main).sheet;
         listView_C = rootView.findViewById(R.id.CListView);
         list = new ArrayList<String>();
-
 
         fmanager = getFragmentManager();
         ftrans = fmanager.beginTransaction();
         back_btn = rootView.findViewById(R.id.backBtn);
         recoFrag = new RecoFragment();
+        //Back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -55,9 +56,10 @@ public class CleanRecoFragment extends Fragment {
             }
         });
 
+        //Read all data from sheet, find '공기 정화' plants and store them to cleanList
         if (sheet != null) {
             int colTotal = sheet.getColumns();    // 전체 컬럼
-            int rowIndexStart = 1;                  // row 인덱스 시작
+            int rowIndexStart = 1;                // row 인덱스 시작
             int rowTotal = sheet.getColumn(colTotal - 1).length;
             for (int i = rowIndexStart; i < rowTotal; i++) {
                 if (i == 1)
@@ -69,11 +71,14 @@ public class CleanRecoFragment extends Fragment {
                     cleanList.add(p_name);
                 }
             }
+            //add cleanList to list array
+            //create an adapter and set adapter to listView
             list.addAll(cleanList);
             adapter = new SearchAdapter(list, MainActivity.context_main);
             listView_C.setAdapter(adapter);
 
             pinfoFragment = new PlantsInfoFragment();
+            //if each item clicked, move page to the item(plant)'s information page
             listView_C.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView,

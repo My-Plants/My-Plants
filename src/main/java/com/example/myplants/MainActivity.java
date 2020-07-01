@@ -94,7 +94,8 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-        //Enable or disable push notification depending on switch state
+        //createNotification();
+        //Notification 앱 실행시 푸쉬알림
         String sfName = "Noti";
         preferences = getSharedPreferences(sfName, MODE_PRIVATE);
         String s = preferences.getString("Notification", "no value");
@@ -213,7 +214,7 @@ public class MainActivity extends AppCompatActivity {
             builder.setContentText("잠깐! 여러분의 식물은 잘 지내고 있나요?");
         }
 
-        //Read nicknames and dates from sql for watering notifications
+        //가져오기
         helper = new MySQLiteOpenHelper(this, "person.db", null, 1);
         db = helper.getReadableDatabase();
         Cursor c = db.query("myPlantList", null, null, null, null, null, null);
@@ -225,6 +226,7 @@ public class MainActivity extends AppCompatActivity {
         String time = mFormat.format(date); //Save date as String
 
         String watering_text = "";
+        //c.getCount() == 45
         while (c.moveToNext()){
             nickname_t=c.getString(c.getColumnIndex("nickname"));
             name_t = c.getString(c.getColumnIndex("name"));
@@ -242,7 +244,9 @@ public class MainActivity extends AppCompatActivity {
                 Date FirstDate = format.parse(time);
                 Log.d("date",date_t);
                 Date SecondDate = format.parse(date_t);
+                //Date SecondDate = format.parse("20200622");
 
+                //String name_t = "산세베리아";
                 // Calculate two dates converted to Date -> Initialize long type variable with its return value
                 // Calculation result : -950400000. Return to long type
                 //Date.getTime() : Returns how many seconds have passed since 00:00:00 in 1970 based on the date.
@@ -255,9 +259,15 @@ public class MainActivity extends AppCompatActivity {
                 if(calDateDays > 0)
                     if((calDateDays%watering_) == 0) {
                         builder2.setSmallIcon(R.drawable.plant2);
-                        builder2.setContentTitle("My plants : 물 주는 날이에요!");
-                        //If expand, see the name of the plant names " + "" +
+                        builder2.setContentTitle("My plants : 물 주는 날이에요!"); //확장하면 식물이름 보이도록 " + "" +
                         watering_text = watering_text + "\uD83C\uDF31 "+nickname_t + "\n";
+                        //builder2.setContentText("물 주는 날이에요!");
+                        //builder2.setStyle(new NotificationCompat.BigTextStyle().bigText("물 주는 날이에요!" + nickname_t));
+
+                    /*Notification.InboxStyle inboxStyle = new Notification.InboxStyle(builder2);
+                    inboxStyle.addLine(nickname_t); //string에 식물이름(name_t)만 넣고
+                    inboxStyle.addLine("물 주는 날이에요!");
+                    builder2.setStyle(inboxStyle);*/
                     }
                     else{
                     }

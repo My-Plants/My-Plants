@@ -76,13 +76,15 @@ public class SetFragment extends Fragment {
             }
         });
         sw = (Switch) rootView.findViewById(R.id.set_noti);
-        sw.toggle(); //Change Switch to the Reverse Status option currently set on the Switch
+
+        sw.toggle(); //Change switch's option(ON->OFF / OFF->ON)
         String sfName = "Noti";
         preferences = context.getSharedPreferences(sfName, Context.MODE_PRIVATE);
         String s = preferences.getString("Notification", "no value");
         if(s.contains("Not")) {
             sw.toggle();
         }
+        //CheckState();
         sw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,15 +95,16 @@ public class SetFragment extends Fragment {
         // Inflate the layout for this fragment
         return  rootView;
     }
+    //Change notification receive state when switch clicked
     public void CheckState(){
-        if(sw.isChecked()){ //Save 'Receive' in SharedPreferences when switch is on
+        if(sw.isChecked()){
             Toast.makeText(context, "Receive Notification", Toast.LENGTH_LONG).show();
             String sfName = "Noti";
             preferences = context.getSharedPreferences(sfName, Context.MODE_PRIVATE);
             editor = preferences.edit();
             editor.putString("Notification", "Receive");
             editor.commit();
-        } else { //Save 'Not' in SharedPreferences when switch is off
+        } else {
             Toast.makeText(context, "Not Receive Notification", Toast.LENGTH_LONG).show();
             String sfName = "Noti";
             preferences = context.getSharedPreferences(sfName, Context.MODE_PRIVATE);

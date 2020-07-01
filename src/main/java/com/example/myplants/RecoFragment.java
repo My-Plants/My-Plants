@@ -32,39 +32,41 @@ public class RecoFragment extends Fragment {
         fmanager = getFragmentManager();
         ftrans = fmanager.beginTransaction();
         level_btn = rootView.findViewById(R.id.reco1);
-        //proFrag = new ProfileFragment();
+
         size_btn = rootView.findViewById(R.id.reco2);
 
         clean_btn = rootView.findViewById(R.id.reco3);
 
         back_btn = rootView.findViewById(R.id.backBtn);
-        //infoFrag = new InfoFragment();
+        //replace fragment with each level plants recommend fragment
         level_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, levelFrag).commit();
             }
         });
-
+        //replace fragment with each size plants recommend fragment
         size_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, sizeFrag).commit();
             }
         });
+        //replace fragment with air purification plants recommend fragment
         clean_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, cleanFrag).commit();
             }
         });
+        //Back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, mainFrag).commit();
             }
         });
-        // Inflate the layout for this fragment
+
         return  rootView;
     }
 }

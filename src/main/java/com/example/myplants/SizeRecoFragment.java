@@ -61,7 +61,7 @@ public class SizeRecoFragment extends Fragment {
         list1 = new ArrayList<String>();
         list2 = new ArrayList<String>();
         list3 = new ArrayList<String>();
-
+        //when button 'size1' is pressed, show small size plants
         size1 = rootView.findViewById(R.id.small);
         size1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,6 +73,7 @@ public class SizeRecoFragment extends Fragment {
                 }
             }
         });
+        //when button 'size2' is pressed, show middle size plants
         size2 = rootView.findViewById(R.id.mid);
         size2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,6 +85,7 @@ public class SizeRecoFragment extends Fragment {
                 }
             }
         });
+        //when button 'size3' is pressed, show large size plants
         size3 = rootView.findViewById(R.id.big);
         size3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,13 +102,14 @@ public class SizeRecoFragment extends Fragment {
         ftrans = fmanager.beginTransaction();
         back_btn = rootView.findViewById(R.id.backBtn);
         recoFrag = new RecoFragment();
+        //back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, recoFrag).commit();
             }
         });
-
+        //Read all data from sheet, find each size plants and store them to each list
         if (sheet != null) {
             int colTotal = sheet.getColumns();    // 전체 컬럼
             int rowIndexStart = 1;                  // row 인덱스 시작
@@ -116,18 +119,20 @@ public class SizeRecoFragment extends Fragment {
                     continue;
                 String p_name = sheet.getCell(0,i).getContents();
                 String p_level = sheet.getCell(4,i).getContents();
+
                 if(p_level.equals("1")){
                     smallList.add(p_name);
-                    Log.i("levle1", "size1 : "+p_name);
+                    Log.i("size1", "size1 : "+p_name);
                 }else if(p_level.equals("2")){
                     midList.add(p_name);
-                    Log.i("levle2", "size2 : "+p_name);
+                    Log.i("size2", "size2 : "+p_name);
                 }else if(p_level.equals("3")){
                     bigList.add(p_name);
-                    Log.i("levle3", "size3 : "+p_name);
+                    Log.i("size3", "size3 : "+p_name);
                 }
             }
-
+            //add each size list to each list array
+            //create adapters and set them to listView
             list1.addAll(smallList);
             adapter1 = new SearchAdapter(list1, MainActivity.context_main);
             listView_S1.setAdapter(adapter1);
@@ -138,12 +143,12 @@ public class SizeRecoFragment extends Fragment {
             adapter3 = new SearchAdapter(list3, MainActivity.context_main);
             listView_S3.setAdapter(adapter3);
 
+            //if each item clicked, move page to the item(plant)'s information page
             pinfoFragment = new PlantsInfoFragment();
             listView_S1.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 @Override
                 public void onItemClick(AdapterView<?> adapterView,
                                         View view, int position, long id) {
-
                     String selected_item = smallList.get(position);
                     bundle = new Bundle();
                     bundle.putString("selecPlant", selected_item);

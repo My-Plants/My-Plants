@@ -22,11 +22,11 @@
     <string name="shop_sprinkler">Sprinkler</string>
     <string name="shop_acc">Accessories</string>
     <string name="p_picBtn">Gallery Open</string>
-    <string name="p_myplantBtn">Set my Representative plants</string>
+    <string name="p_myplantBtn">Show my plants</string>
     <string name="p_name">Name :</string>
     <string name="p_email">Email :</string>
     <string name="p_state">About Me :</string>
-    <string name="p_plant">Representative plants : </string>
+    <string name="p_plant">My plants : </string>
 
     <string name="p_edit">Edit Profile</string>
     <string name="pe_edit">Profile Edit</string>

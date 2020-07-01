@@ -53,14 +53,19 @@ public class SubmainFragment extends Fragment {
 
         mPref = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext());
 
-
-
         txtName = rootView.findViewById(R.id.show_name);
         txtState = rootView.findViewById(R.id.show_state);
-        pro_name = mPref.getString("prof_name", null);
-        pro_state = mPref.getString("prof_state", null);
-        if(txtName != null)
+        //profile set
+        pro_name = mPref.getString("prof_name", "");
+        pro_state = mPref.getString("prof_state", "");
+        //If user already set his/her data, show the profile.
+        //else, show "Please set your profile"
+        if(!pro_name.equals(""))
             txtName.setText("Hello!  " + pro_name + " :)!");
+        else{
+            txtName.setText("Hello!:) \nPlease set your profile!");
+            txtName.setTextSize(20);
+        }
         txtState.setText(pro_state);
         String i_image = mPref.getString("prof_img", null);
         if (i_image != null) {
@@ -115,6 +120,7 @@ public class SubmainFragment extends Fragment {
         // Inflate the layout for this fragment
         return  rootView;
     }
+
 
     public Bitmap StringToBitMap(String encodedString) {
         try {
