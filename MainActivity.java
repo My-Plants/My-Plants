@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
     public static Context context_main;
     public Sheet sheet;
 
-    //날짜 나타내려고하는 포맷 설정
+    //Format Settings to Show Date
     private SimpleDateFormat mFormat = new SimpleDateFormat("yyyyMMdd");
 
     @Override
@@ -102,20 +102,15 @@ public class MainActivity extends AppCompatActivity {
             createNotification();
         }
 
-        //sqlite
-        //helper = new MySQLiteOpenHelper((MainActivity) MainActivity.context_main, "person.db", null, 1);
-//        insert("산세베리아", 0, "2020-06-21");
-        //       select();
-
         try {
             InputStream is = getBaseContext().getResources().getAssets().open("myPlantsData.xls");
             Workbook wb = Workbook.getWorkbook(is);
 
             if(wb != null) {
-                sheet = wb.getSheet(0);   // 시트 불러오기
+                sheet = wb.getSheet(0);   // Load Sheet
                 if(sheet != null) {
-                    int colTotal = sheet.getColumns();    // 전체 컬럼
-                    int rowIndexStart = 1;                  // row 인덱스 시작
+                    int colTotal = sheet.getColumns();    // full column
+                    int rowIndexStart = 1;                  // Start the row index
                     int rowTotal = sheet.getColumn(colTotal-1).length;
 
                     StringBuilder sb;
