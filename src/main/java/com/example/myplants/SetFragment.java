@@ -50,25 +50,25 @@ public class SetFragment extends Fragment {
         pro_btn = rootView.findViewById(R.id.set_pro);
         proFrag = new ProfileFragment();
 
-        //alarm_btn = rootView.findViewById(R.id.set_alarm);
-
         info_btn = rootView.findViewById(R.id.set_info);
         infoFrag = new InfoFragment();
         back_btn = rootView.findViewById(R.id.backBtn);
         mainFrag = new SubmainFragment();
+        //move to profile fragment
         pro_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, proFrag).commit();
             }
         });
-
+        //move to app information fragment
         info_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 ftrans.replace(R.id.container, infoFrag).commit();
             }
         });
+        //back button
         back_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
